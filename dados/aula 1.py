@@ -23,7 +23,7 @@ print("Jogador 2:", jogador2)
 
 if jogador1>jogador2:
     print("jogador 1 é foda")
-if jogador2>jogador1:
+elif jogador2>jogador1:
     print("jogador 2 deu a volta por cima")
 else:
     print("empate de 2 lendas")
