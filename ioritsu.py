@@ -3,49 +3,41 @@
 
 def soma_dois_inteiros(a, b):
 
+    """ Recebe dois números inteiros, e retorna a sua soma"""
     soma = a + b
     return soma
 
-    """ Recebe dois números inteiros, e retorna a sua soma"""
-
-
 def metro_para_milimetros(metros):
 
+    """ Recebe um valor em metros, e retorna o valor em milímetros"""
     metro_para_milimetros = metros * 1000
     return metro_para_milimetros
 
-    """ Recebe um valor em metros, e retorna o valor em milímetros"""
-
-
 def tempo_para_percorrer_uma_distancia(distancia, velocidade):
-
-    tempo = distancia / velocidade
-    return round(tempo, 2)
 
     """ Recebe uma distância e a velocidade de movimentação, e retorna
     as horas que seriam gastas para percorrer em linha reta"""
-
+    tempo = distancia / velocidade
+    return round(tempo, 2)
 
 def aumento_salarial(salario, porcentagem):
 
+    """ Recebe um salário e sua porcentagem de aumento, e retorna
+    o novo salário"""
     aumento = ((salario * porcentagem) / 100) + salario
     return round(aumento, 2)
 
-    """ Recebe um salário e sua porcentagem de aumento, e retorna
-    o novo salário"""
-
-
 def preco_com_desconto(preco_original, percentual_desconto):
-
-    new_price = preco_original - ((preco_original * percentual_desconto) / 100)
-    return round(new_price, 2)
 
     """ Recebe um preço e sua porcentagem de desconto, e retorna
     novo preço"""
-
+    new_price = preco_original - ((preco_original * percentual_desconto) / 100)
+    return round(new_price, 2)
 
 def dias_para_segundos(dias, horas, minutos, segundos):
 
+    """ Recebe uma data em dias com horas, minutos e segundos, e retorna
+    a data em segundos"""
     dias_para_segundos = dias * 86400
     horas_para_segundos = horas * 3600
     minutos_para_segundos = minutos * 60
@@ -54,56 +46,68 @@ def dias_para_segundos(dias, horas, minutos, segundos):
 
     return soma_dos_segundos
 
-    """ Recebe uma data em dias com horas, minutos e segundos, e retorna
-    a data em segundos"""
-
-
 def celsius_para_fahrenheit(c):
 
+    """ Recebe uma temperatura em celsius, e retorna a temperatura
+    em fahrenheit"""
     celsius_para_fahrenheit = (c * 1.8) + 32
 
     return round(celsius_para_fahrenheit, 2)
-    """ Recebe uma temperatura em celsius, e retorna a temperatura
-    em fahrenheit"""
-
 
 def fahrenheit_para_celsius(f):
 
+    """ Recebe uma temperatura em fahrenheit, e retorna a temperatura
+     em celsius"""
     fahrenheit_para_celsius = (f - 32) / 1.8
 
     return round(fahrenheit_para_celsius, 2)
-    """ Recebe uma temperatura em fahrenheit, e retorna a temperatura
-     em celsius"""
-
 
 def preco_aluguel_carro(dias, km):
 
-    preco_aluguel_carro = ((dias * 60) + (km * 0.15))
-
-    return round(preco_aluguel_carro, 2)
     """ Recebe uma quantidade de dias que o carro foi alugado e a
     quantidade de quilômetros rodados, e retorna o valor a ser pago.
     1 dia: 60 reais mais R$ 0,15 por km rodado."""
+    preco_aluguel_carro = ((dias * 60) + (km * 0.15))
 
+    return round(preco_aluguel_carro, 2)
 
 def dias_perdidos_por_fumar(cigarros_fumados_por_dia, anos_fumando):
+
     """ Recebe uma quantidade de cigarros fumados por dia e a quantidade
      de anos que fuma, e retorna o total de dias perdidos, sabendo que
      cada cigarro reduz a vida em 10 minutos."""
+    dias_perdidos_por_fumar = (((cigarros_fumados_por_dia * anos_fumando) * 365) * 10) / 1440
 
+    return round(dias_perdidos_por_fumar, 2)
 
 def dois_elevado_a_um_milhao():
+
     """ Calcula dois elevado a um milhão, e retorna a quantidade de
     algarismos"""
-
+    dois = [2]
+    contas = dois[0] ** 1000000
+    resultado = str(contas)
+    quantidade = len(resultado)
+    return quantidade
 
 def media_final_aprovado_reprovado(p1, p2, ep1, ep2):
+
     """ Recebe as notas das 2 provas e 2 exercícios de programação e retorna
     se o aluno foi ou não aprovado. As provas têm peso 7 e os exercícios
     têm peso 3. Cada parcial tem peso igual."""
+    p1 = 7
+    p2 = 7
+    ep1 = 3
+    ep2 = 3
 
+    soma1 = (p1 + p2) / 2
+    soma2 = (ep1 + ep2) / 2
+    soma_all = (soma1 + soma2) / 2
+    ok = str(soma_all)
+    return ok
 
 def salario(valor_hora, horas_mensais):
+
     """ Recebe quanto ganha por hora e quantas horas trabalho ao mês,
     e retorna o salário líquido.
 
@@ -111,9 +115,14 @@ def salario(valor_hora, horas_mensais):
     - INSS é 8% do salário bruto
     - IR é 11% do salário bruto
     - Sindicato é 5% do salário bruto"""
+    salario = valor_hora * horas_mensais
+    descontos = salario - ((salario * 24) / 100)
 
+    return descontos
 
 def tinta(metros_pintar):
+
+
     """ Recebe quantos metros quadrados precisa pintar,
     e retorna a quantidade de latas de tinta a comprar.
     A cobertura da tinta é de 3 metros por litro de tinta
