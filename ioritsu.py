@@ -107,16 +107,9 @@ def media_final_aprovado_reprovado(p1, p2, ep1, ep2):
     se o aluno foi ou não aprovado. As provas têm peso 7 e os exercícios
     têm peso 3. Cada parcial tem peso igual."""
 
-    p1 = 7
-    p2 = 7
-    ep1 = 3
-    ep2 = 3
-
-    soma1 = (p1 + p2) / 2
-    soma2 = (ep1 + ep2) / 2
-    soma_all = (soma1 + soma2) / 2
-    ok = str(soma_all)
-    return ok
+    notinhas = p1 * (0.70 + p2 * 0.70) + (ep1 * 0.30 + ep2 * 0.30)
+    dividido = notinhas / 4
+    return dividido > 7
 
 def salario(valor_hora, horas_mensais):
 
@@ -140,7 +133,10 @@ def tinta(metros_pintar):
     A cobertura da tinta é de 3 metros por litro de tinta
     Cada lata possui 18 litros de tinta"""
 
+    from math import ceil
 
+    tinta = (metros_pintar / 3) / 18
+    return ceil(tinta)
 
 def duzias(ovos):
 
@@ -159,7 +155,11 @@ def decompor_numero(numero):
     Obs.: não utilize operações com strings
     '''
 
+    numero_int = numero // 100
+    decompor_numero = (numero - (numero_int * 100)) // 10
+    ok = numero - (numero_int * 100) - (decompor_numero * 10)
 
+    return numero_int, decompor_numero, ok
 
 def palindrome(texto):
     """Faça uma função que verifique se uma textro passado é palíndrome,
