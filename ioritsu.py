@@ -165,21 +165,49 @@ def palindrome(texto):
     """Faça uma função que verifique se uma textro passado é palíndrome,
     isto é, se é igual quando lido de trás pra frente."""
 
+    texto = texto.lower()
+    texto = texto.replace("!", "")
+    texto = texto.replace(" ", "")
+
+    return texto == texto[::-1]
 
 def troca_caixa(texto):
     """Vogais ficam em caixa alta (maiúsculas)
     Consoantes ficam em caixa baixa (minúsculas)"""
 
+    texto = texto.lower()
+    texto = texto.replace("a", "A")
+    texto = texto.replace('e', 'E')
+    texto = texto.replace('i', 'I')
+    texto = texto.replace('o', 'O')
+    texto = texto.replace('u', 'U')
+
+    return texto
 
 def imprime_mes_por_extenso(data):
     """Faça um programa que solicite a data de nascimento (dd/mm/aaaa)
     e imprima com o nome do mês por extenso
     """
 
+    data = data.replace("/01/", ' de janeiro de ')
+    data = data.replace("/02/", ' de fevereiro de ')
+    data = data.replace("/03/", ' de março de ')
+    data = data.replace("/04/", ' de abril de ')
+    data = data.replace("/05/", ' de maio de ')
+    data = data.replace("/06/", ' de junho de ')
+    data = data.replace('/07/', ' de julho de ')
+    data = data.replace('/08/', ' de agosto de ')
+    data = data.replace('/09/', ' de setembro de ')
+    data = data.replace('/10/', ' de outubro de ')
+    data = data.replace('/11/', ' de novembro de ')
+    data = data.replace('/12/', ' de dezembro de ')
+
+    return data
 
 def encontra_caracter(texto, caracter_procurado):
     """Receba um texto e retorne a localização da primeira vez que
     aparece o caracter especificado"""
+
 
 
 def é_azarado(numero):
