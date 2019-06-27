@@ -189,18 +189,9 @@ def imprime_mes_por_extenso(data):
     e imprima com o nome do mês por extenso
     """
 
-    data = data.replace("/01/", ' de janeiro de ')
-    data = data.replace("/02/", ' de fevereiro de ')
-    data = data.replace("/03/", ' de março de ')
-    data = data.replace("/04/", ' de abril de ')
-    data = data.replace("/05/", ' de maio de ')
-    data = data.replace("/06/", ' de junho de ')
-    data = data.replace('/07/', ' de julho de ')
-    data = data.replace('/08/', ' de agosto de ')
-    data = data.replace('/09/', ' de setembro de ')
-    data = data.replace('/10/', ' de outubro de ')
-    data = data.replace('/11/', ' de novembro de ')
-    data = data.replace('/12/', ' de dezembro de ')
+    data = {'/01/' : ' de janeiro de ', '/02/' : ' de fevereiro de ', '/03/' : ' de marco de ', '/04/' : ' de abril de ', '/05/' : ' de maio de ',
+            '/06/' : ' de junho de ', '/07/' : ' de julho de ', '/08/' : ' de agosto de ', '/09/' : ' de setembro de ', '/10/' : ' de outubro de ',
+            '/11/' : ' de novembro de ', '/12/' : ' de dezembro de '}
 
     return data
 
@@ -213,27 +204,38 @@ def encontra_caracter(texto, caracter_procurado):
 def é_azarado(numero):
     """O último dígito não pode ser igual ao primeiro, porque isso dá azar."""
 
+    numero.split()
+    primeiro = numero[0]
+    ultimo = numero[-1]
+
+    return primeiro == ultimo
 
 def ondernamento_contrario(lista):
     """ Devolve a lista invertida"""
 
+    return lista[::-1]
 
 def maximo(lista):
     """ Calcule o maior número da 'lista' """
 
+    lista = max(lista)
 
 def minimo(lista):
     """ Calcule o menor número da 'lista' """
 
+    lista = min(lista)
 
 def maior_menor(lista):
     """ Calcule o maior e o menor numero da 'lista' """
 
+    return max(lista), min(lista)
 
 def media_saltos_lista(saltos):
     """Receba uma lista com os saltos de um atleta e calcule a média
     dos seus saltos, sabendo que o melhor e o pior saltos são desconsiderados.
     """
+
+    saltos =
 
 
 def contem(lista, item_procurado):
@@ -243,6 +245,9 @@ def contem(lista, item_procurado):
 def conta(lista, item_procurado):
     """Informa quantas ocorrências de um item existem numa lista."""
 
+    lista = lista.count(item_procurado)
+
+    return lista
 
 def mes_extenso(mes):
     """Receba um número correspondente ao mês e devolva o nome do mês,
@@ -254,6 +259,9 @@ def media_temperaturas(temperaturas):
     """Devolva a média das temperaturas.
     """
 
+    temperaturas = sum(temperaturas) / len(temperaturas)
+
+    return temperaturas
 
 def leet(texto):
     '''
